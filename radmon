@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+#Script to test while statement
+#
+#
+
+while [ true ]
+do
+  clear
+  date
+  echo "Uptime" 
+  /opt/freeradius/freeradius/sbin/radmin -e "show uptime"
+  echo "Accounting"
+  /opt/freeradius/freeradius/sbin/radmin -e "stats client acct"
+  echo "Authentication"
+  /opt/freeradius/freeradius/sbin/radmin -e "stats client auth"
+  echo
+  sleep 2
+done
+
